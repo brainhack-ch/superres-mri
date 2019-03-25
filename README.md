@@ -1,4 +1,4 @@
-# SuperResMRI: 
+# SuperResMRI
 > SINAPP (Modular BIDS App) for Motion-robust Super-Resolution MRI
 
 OG 2019 - Project 03:  Package a portable and reproducible software for motion-robust MRI super-resolution  by Sébastien Tourbier
