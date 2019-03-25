@@ -1,1 +1,1 @@
-# SuperMRI: BIDS App for Motion-robust Super-Resolution MRI
+# SuperResMRI: BIDS App for Motion-robust Super-Resolution MRI
