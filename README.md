@@ -5,10 +5,10 @@ OG 2019 - Project 03:  Package a portable and reproducible software for motion-r
 
 ![](resources/images/superres-mri.jpg)
 
-The essence of this project is to develop the next generation of the open-source [Medical Image Analysis Laboratory Super-Resolution ToolKit (MIALSRTK)](https://github.com/sebastientourbier/mialsuperresolutiontoolkit), a set of C++ image processing tools necessary to perform motion-robust super-resolution fetal MRI reconstruction. This new version will integrate all new advances in the neuroimaging field over the past three years with the advent of:
+The essence of this project is to develop the next generation of the open-source [Medical Image Analysis Laboratory Super-Resolution ToolKit (MIALSRTK)](https://github.com/sebastientourbier/mialsuperresolutiontoolkit), a set of C++ image processing tools necessary to perform motion-robust super-resolution fetal MRI reconstruction. The new version will integrate all new advances in the neuroimaging field over the past three years with the advent of:
 
 - the Brain Imaging Data Structure (BIDS), a standard to organize and describe neuroimaging data,
-- and the BIDS App framework, which promotes reproducibility and portability. all state-of-the-art solutions for enhanced portability, reusability, reproducibility and replicability in neuroimaging.
+- and the BIDS App framework, which promotes reproducibility and portability. 
 
 
 ## Install
