@@ -1,7 +1,6 @@
 # SuperResMRI
-> SINAPP (Modular BIDS App) for Motion-robust Super-Resolution MRI
 
-OG 2019 - Project 03:  Package a portable and reproducible software for motion-robust MRI super-resolution  by Sébastien Tourbier
+Brainhack Global 2019 - Project 05:  SINAPP (Modular BIDS App) for Motion-robust Super-Resolution MRI by Sébastien Tourbier
 
 ![](resources/images/superres-mri.jpg)
 
@@ -10,6 +9,9 @@ The essence of this project is to develop the next generation of the open-source
 - the Brain Imaging Data Structure (BIDS), a standard to organize and describe neuroimaging data,
 - and the BIDS App framework, which promotes reproducibility and portability. 
 
+**Project started at previous Brainhack Open Geneva 19 as:** 
+
+OG 2019 - Project 03: Package a portable and reproducible software for motion-robust MRI super-resolution (See achievements in ![presentation](resources/slides/BrainHack2019.pdf))
 
 ## Install
 * Clone this repository:
