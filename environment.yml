@@ -12,10 +12,12 @@ dependencies:
 - nipype=1.1.8
 - traitsui=6.0.0
 - jupyter=1.0.0
+- graphviz=2.40.1
 
 - pip:
     - duecredit==0.7.0
     - apptools==4.4.0
+    - pybids==0.8
     #- datalad[full]==0.11.3
     #- datalad-revolution==0.6.0
     #- datalad-container==0.2.1
