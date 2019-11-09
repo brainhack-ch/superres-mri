@@ -47,6 +47,8 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 
+#Mac
+.DS_Store
 
 # Flask stuff:
 instance/
