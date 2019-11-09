@@ -45,14 +45,13 @@ class BtkNLMDenoising(BaseInterface):
     def _run_interface(self, runtime):
         _, name, ext = split_filename(os.path.abspath(self.inputs.in_file))
         #Version from MIAL/mialsuperresolutiontoolkit with no docker
-        #out_file = os.path.join(self.inputs.bids_dir, ''.join((name, self.inputs.out_postfix, ext)))
-        
+        #out_file = os.path.join(self.inputs.bids_dir, ''.join((name, self.inputs.out_postfix, ext)))    
         out_file = os.path.join(os.getcwd().replace(self.inputs.bids_dir,'/fetaldata'), ''.join((name, self.inputs.out_postfix, ext)))
         
         if self.inputs.in_mask:
-            cmd = 'docker run --rm -u {}:{} -v "{}":/fetaldata sebastientourbier/mialsuperresolutiontoolkit btkNLMDenoising -i "{}" -m "{}" -o "{}" -b {}'.format(os.getuid(),os.getgid(),self.inputs.bids_dir,self.inputs.in_file,self.inputs.in_mask,out_file,self.inputs.weight)
+            cmd = 'docker run --rm -u {}:{} -v /var/run/docker.sock:/var/run/docker.sock -v "{}":/fetaldata sebastientourbier/mialsuperresolutiontoolkit btkNLMDenoising -i "{}" -m "{}" -o "{}" -b {}'.format(os.getuid(),os.getgid(),self.inputs.bids_dir,self.inputs.in_file,self.inputs.in_mask,out_file,self.inputs.weight)
         else:
-            cmd = 'docker run --rm -u {}:{} -v "{}":/fetaldata sebastientourbier/mialsuperresolutiontoolkit btkNLMDenoising -i "{}" -o "{}" -b {}'.format(os.getuid(),os.getgid(),self.inputs.bids_dir,self.inputs.in_file,out_file,self.inputs.weight)
+            cmd = 'docker run --rm -u {}:{} -v /var/run/docker.sock:/var/run/docker.sock -v "{}":/fetaldata sebastientourbier/mialsuperresolutiontoolkit btkNLMDenoising -i "{}" -o "{}" -b {}'.format(os.getuid(),os.getgid(),self.inputs.bids_dir,self.inputs.in_file,out_file,self.inputs.weight)
         
         try:
             print('... cmd: {}'.format(cmd))
