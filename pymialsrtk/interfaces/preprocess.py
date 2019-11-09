@@ -1,6 +1,9 @@
 # Copyright © 2016-2019 Medical Image Analysis Laboratory, University Hospital Center and University of Lausanne (UNIL-CHUV), Switzerland
 #
-#  This software is distributed under the open-source license Modified BSD.
+#  This software is distributed under the open-source license Modified BSD
+#
+# Modified by the brainhackers
+#
 
 """ PyMIALSRTK preprocessing functions
 """
@@ -19,9 +22,6 @@ from nipype.interfaces.base import traits, isdefined, CommandLine, CommandLineIn
 
 from pymialsrtk.interfaces.utils import run
 
-
-
- 
 # 
 ## NLM denoising  
 # 
@@ -42,15 +42,17 @@ class BtkNLMDenoising(BaseInterface):
     input_spec = BtkNLMDenoisingInputSpec
     output_spec = BtkNLMDenoisingOutputSpec
     
-    def _run_interface(self, runtime): 
+    def _run_interface(self, runtime):
         _, name, ext = split_filename(os.path.abspath(self.inputs.in_file))
-        out_file = os.path.join(self.inputs.bids_dir, ''.join((name, self.inputs.out_postfix, ext)))
-        print('out_file: {}'.format(out_file))
-
+        #Version from MIAL/mialsuperresolutiontoolkit with no docker
+        #out_file = os.path.join(self.inputs.bids_dir, ''.join((name, self.inputs.out_postfix, ext)))
+        
+        out_file = os.path.join(os.getcwd().replace(self.inputs.bids_dir,'/fetaldata'), ''.join((name, self.inputs.out_postfix, ext)))
+        
         if self.inputs.in_mask:
-            cmd = 'btkNLMDenoising -i "{}" -m "{}" -o "{}" -b {}'.format(self.inputs.in_file,self.inputs.in_mask,out_file,self.inputs.weight)
+            cmd = 'docker run --rm -u {}:{} -v "{}":/fetaldata sebastientourbier/mialsuperresolutiontoolkit btkNLMDenoising -i "{}" -m "{}" -o "{}" -b {}'.format(os.getuid(),os.getgid(),self.inputs.bids_dir,self.inputs.in_file,self.inputs.in_mask,out_file,self.inputs.weight)
         else:
-            cmd = 'btkNLMDenoising -i "{}" -o "{}" -b {}'.format(self.inputs.in_file,out_file,self.inputs.weight)
+            cmd = 'docker run --rm -u {}:{} -v "{}":/fetaldata sebastientourbier/mialsuperresolutiontoolkit btkNLMDenoising -i "{}" -o "{}" -b {}'.format(os.getuid(),os.getgid(),self.inputs.bids_dir,self.inputs.in_file,out_file,self.inputs.weight)
         
         try:
             print('... cmd: {}'.format(cmd))
@@ -62,10 +64,10 @@ class BtkNLMDenoising(BaseInterface):
     def _list_outputs(self):
         outputs = self._outputs().get()
         _, name, ext = split_filename(os.path.abspath(self.inputs.in_file))
-        outputs['out_file'] = os.path.join(self.inputs.bids_dir, ''.join((name, self.inputs.out_postfix, ext)))
+        #Version from MIAL/mialsuperresolutiontoolkit with no docker
+        #outputs['out_file'] = os.path.join(self.inputs.bids_dir, ''.join((name, self.inputs.out_postfix, ext)))
+        outputs['out_file'] = os.path.join(os.getcwd(), ''.join((name, self.inputs.out_postfix, ext)))
         return outputs
-    
-    
 
 class MultipleBtkNLMDenoisingInputSpec(BaseInterfaceInputSpec):
     bids_dir = Directory(desc='BIDS root directory',mandatory=True,exists=True)
@@ -82,7 +84,7 @@ class MultipleBtkNLMDenoising(BaseInterface):
     output_spec = MultipleBtkNLMDenoisingOutputSpec
 
     def _run_interface(self, runtime):
-        if len(self.inputs.input_images)>0:
+        if len(self.inputs.input_masks)>0:
             for input_image, input_mask in zip(self.inputs.input_images,self.inputs.input_masks):
                 ax = BtkNLMDenoising(bids_dir = self.inputs.bids_dir, in_file = input_image, in_mask = input_mask, out_postfix=self.inputs.out_postfix, weight = self.inputs.weight)
                 ax.run()
@@ -96,6 +98,7 @@ class MultipleBtkNLMDenoising(BaseInterface):
         outputs = self._outputs().get()
         outputs['output_images'] = glob(os.path.abspath("*.nii.gz"))
         return outputs
+
 
 
  
