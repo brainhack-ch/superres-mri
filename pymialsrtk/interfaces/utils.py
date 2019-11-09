@@ -7,7 +7,7 @@
 
 import os
 
-def run(self, command, env={}, cwd=os.getcwd()):
+def run(command, env={}, cwd=os.getcwd()):
 	import subprocess
 	merged_env = os.environ
 	merged_env.update(env)
