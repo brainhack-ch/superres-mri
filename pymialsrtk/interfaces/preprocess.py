@@ -48,14 +48,26 @@ class BtkNLMDenoising(BaseInterface):
         #out_file = os.path.join(self.inputs.bids_dir, ''.join((name, self.inputs.out_postfix, ext)))    
         out_file = os.path.join(os.getcwd().replace(self.inputs.bids_dir,'/fetaldata'), ''.join((name, self.inputs.out_postfix, ext)))
         
+        print(" UID: {}".format(os.getuid()))
+        print(" GID: {}".format(os.getgid()))
+
+        print(os.stat("/var/run/docker.sock"))
+        print(os.stat("/usr/bin/docker"))
+
+        cmd = []
+        cmd.append("docker run --rm -u {}:{}".format(os.getuid(),os.getgid()))
+        cmd.append("-v /var/run/docker.sock:/var/run/docker.sock")
+        cmd.append("-v /usr/local/bin/docker:/usr/bin/docker")
+        cmd.append("{}:/fetaldata".format(self.inputs.bids_dir))
+        cmd.append("sebastientourbier/mialsuperresolutiontoolkit btkNLMDenoising")
+        cmd.append("-i {} -o {} -b {}".format(self.inputs.in_file,out_file,self.inputs.weight))
+
         if self.inputs.in_mask:
-            cmd = 'docker run --rm -u {}:{} -v /var/run/docker.sock:/var/run/docker.sock -v "{}":/fetaldata sebastientourbier/mialsuperresolutiontoolkit btkNLMDenoising -i "{}" -m "{}" -o "{}" -b {}'.format(os.getuid(),os.getgid(),self.inputs.bids_dir,self.inputs.in_file,self.inputs.in_mask,out_file,self.inputs.weight)
-        else:
-            cmd = 'docker run --rm -u {}:{} -v /var/run/docker.sock:/var/run/docker.sock -v "{}":/fetaldata sebastientourbier/mialsuperresolutiontoolkit btkNLMDenoising -i "{}" -o "{}" -b {}'.format(os.getuid(),os.getgid(),self.inputs.bids_dir,self.inputs.in_file,out_file,self.inputs.weight)
-        
+            cmd.append("-m {}".format(self.inputs.in_mask))
+
         try:
             print('... cmd: {}'.format(cmd))
-            run(self, cmd, env={}, cwd=os.path.abspath(self.inputs.bids_dir))
+            run(' '.join(cmd), env={}, cwd=os.path.abspath(self.inputs.bids_dir))
         except:
             print('Failed')
         return runtime
