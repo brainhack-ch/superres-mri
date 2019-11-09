@@ -57,7 +57,7 @@ def main(**extra_args):
           maintainer = 'Medical Image Analysis Laboratory, University Hospital of Lausanne and the MIALSRTK developers',
           maintainer_email = 'sebastien.tourbier@alumni.epfl.ch',
           package_data = package_data,
-          requires=["numpy (>=1.2)", "nibabel (>=2.0.0)", "pybids (>=0.9.1)"],
+          requires=["numpy (>=1.2)", "nibabel (>=2.0.0)", "pybids (==0.8)"],
           **extra_args
          )
 
