@@ -9,8 +9,7 @@ if os.path.exists('MANIFEST'): os.remove('MANIFEST')
 
 packages=["pymialsrtk",
           "pymialsrtk.interfaces",
-          "pymialsrtk.pipelines",
-          "pymialsrtk.sinapps"]
+          "pymialsrtk.pipelines"]
 
 package_data = {}
 
