@@ -56,15 +56,21 @@ def create_workflow(bids_dir, output_dir, subject):
     wf.connect(bg, "T2ws", preparePaths, "local_T2ws_paths")
     wf.connect(bg, "masks", preparePaths, "local_masks_paths")    
     wf.connect(preparePaths, "docker_T2ws_paths", nlmDenoise, "input_images")
+    wf.connect(preparePaths, "docker_masks_paths", nlmDenoise, "input_masks")
 
     return wf
 
-def main(bids_dir, output_dir, subject):
+def main(bids_dir, output_dir, subject, number_of_cores=1):
     #layout = BIDSLayout(bids_dir)
     #print(layout)
     wf = create_workflow(bids_dir, output_dir, subject)
-    res = wf.run()
-    #wf.write_graph()
+
+    if(number_of_cores != 1):
+        res = wf.run(plugin='MultiProc', plugin_args={'n_procs' : self.number_of_cores})
+    else:
+        res = wf.run()
+
+    wf.write_graph()
 
 
 def get_parser():
