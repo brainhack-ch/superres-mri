@@ -47,11 +47,16 @@ docker pull sebastientourbier/mialsuperresolutiontoolkit:latest
 ```
 
 
-## Running the SINAPP example:
+## Run the SINAPP example
 
-We provide two scripts in `sinapps/nlmdenoise/`. The script `build_sinapp-core_and_sinapp-nlmdenoise.sh`shows you how we build the sinapp-nlmdenoise docker image. The script `run_sinapp-nlmdenoise.sh` shows you how to execute it. 
+This example of SINAPP that performs NLM denoising was developed during the BrainHack Global Geneva 2019 and provides a proof of feasibility of the envisioned framework. Its architecture is illustrated by the figure below:
 
-Instructions to make it work:
+![](resources/images/sinapp-nlmdenoise.png)
+
+We provide two scripts in `sinapps/nlmdenoise/` that facilitates the built and testing of the SINAPP example that performs NLMdenoising. The script `build_sinapp-core_and_sinapp-nlmdenoise.sh`shows you how we build the sinapp-nlmdenoise docker image. The script `run_sinapp-nlmdenoise.sh` shows you how to execute it. 
+
+**Instructions**
+
 * Edit the path defined by `superes-mri_dir` in `build_sinapp-core_and_sinapp-nlmdenoise.sh` by your `<Your/installation/dir>`.
 * Edit the path defined by `bids_dir` in the  `run_sinapp-nlmdenoise.sh` script to the location of your BIDS dataset location (`<Your/BIDS/dir>`)
 * In a terminal go to your `<Your/installation/dir>`:
@@ -62,7 +67,7 @@ cd <Your/installation/dir>
 ```
 sh build_sinapp-core_and_sinapp-nlmdenoise.sh
 ```
-* Run the SINAPP that performs NLMdenoising on all T2w scans of sub-01 in `<Your/BIDS/dir>`:
+* Run the SINAPP  on all T2w scans of sub-01 in `<Your/BIDS/dir>`:
 ```
 sh run_sinapp-nlmdenoise.sh
 ```
@@ -71,7 +76,7 @@ Results are generated in `<Your/BIDS/dir>/derivatives/superres-mri/sub-01/nipype
 ## Want to help with the development of the entire collection of SINAPPs?
 Please check the github issue https://github.com/brainhack-ch/superres-mri/issues/7 dedicated to the management, tracking, and discussions about the developement of the SINAPP collection for the MIALSRTK library.
 
-## Running the notebooks:
+## Running the notebooks
 
 * Go to the notebooks directory in the cloned repo:
 ```
