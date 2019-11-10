@@ -1,7 +1,5 @@
 # SuperResMRI
 
-Brainhack Global 2019 - Project 05:  SINAPP (Modular BIDS App) for Motion-robust Super-Resolution MRI by Sébastien Tourbier
-
 ![](resources/images/superres-mri.jpg)
 
 The essence of this project is to develop a modular BIDS App which interfaces with the open-source [Medical Image Analysis Laboratory Super-Resolution ToolKit (MIALSRTK)](https://github.com/sebastientourbier/mialsuperresolutiontoolkit), a set of C++ image processing tools necessary to perform the whole processing pipeline for motion-robust fetal brain super-resolution MRI.
@@ -16,10 +14,19 @@ It investigates a novel framework, the Self-contained Interfaceable No-nonsense 
 
 ![](resources/images/sinapp-framework.png)
 
+### Achievements during the previous Brainhack
 
-**Project started at previous Brainhack Open Geneva 19 as:** 
+#### Brainhack Global 2019 
 
-OG 2019 - Project 03: Package a portable and reproducible software for motion-robust MRI super-resolution (See achievements in ![presentation](resources/slides/BrainHack2019.pdf))
+Project 05:  SINAPP (Modular BIDS App) for Motion-robust Super-Resolution MRI
+
+* See the final ![presentation](resources/slides/BrainHackGlobal2019.pdf)
+
+#### Brainhack Open Geneva 2019 
+
+Project 03: Package a portable and reproducible software for motion-robust MRI super-resolution
+
+* See the final ![presentation](resources/slides/BrainHack2019.pdf)
 
 ## Contribution, bug and support
 
