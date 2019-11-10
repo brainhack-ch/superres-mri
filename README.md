@@ -4,10 +4,18 @@ Brainhack Global 2019 - Project 05:  SINAPP (Modular BIDS App) for Motion-robust
 
 ![](resources/images/superres-mri.jpg)
 
-The essence of this project is to develop the next generation of the open-source [Medical Image Analysis Laboratory Super-Resolution ToolKit (MIALSRTK)](https://github.com/sebastientourbier/mialsuperresolutiontoolkit), a set of C++ image processing tools necessary to perform motion-robust super-resolution fetal MRI reconstruction. The new version will integrate all new advances in the neuroimaging field over the past three years with the advent of:
+The essence of this project is to develop a modular BIDS App which interfaces with the open-source [Medical Image Analysis Laboratory Super-Resolution ToolKit (MIALSRTK)](https://github.com/sebastientourbier/mialsuperresolutiontoolkit), a set of C++ image processing tools necessary to perform the whole processing pipeline for motion-robust fetal brain super-resolution MRI.
+
+This project is built on standards, tools, and frameworks developed to address the reproducibility and transparency challenges in the neuroimaging field :
 
 - the Brain Imaging Data Structure (BIDS), a standard to organize and describe neuroimaging data,
+- the Nipype dataflow library, which provides a common python API to interface with different tools and a workflow engine which control tool execution and record provenance. 
 - and the BIDS App framework, which promotes reproducibility and portability. 
+
+It investigates a novel framework, the Self-contained Interfaceable No-nonsense Application (SINAPP) framework, designed to provide modularity and reusability of the pipeline stages within the BIDS App framework. 
+
+![](resources/images/sinapp-framework.jpg)
+
 
 **Project started at previous Brainhack Open Geneva 19 as:** 
 
