@@ -20,9 +20,9 @@ It investigates a novel framework, the Self-contained Interfaceable No-nonsense 
 
 Project 05:  SINAPP (Modular BIDS App) for Motion-robust Super-Resolution MRI
 
-**Team:** Manik, Olivier, Guillaume and Sébastien 
-
 * See the final ![presentation](resources/slides/BrainHackGlobal2019.pdf)
+
+**Team:** Manik, Olivier, Guillaume and Sébastien 
 
 #### Brainhack Open Geneva 2019 
 
