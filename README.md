@@ -48,6 +48,9 @@ sh run_sinapp-nlmdenoise.sh
 ```
 Results are generated in `<Your/BIDS/dir>/derivatives/superres-mri/sub-01/nipype/sinapp_nlmdenoise`.
 
+## Want to contribute with the development of the SINAPPs?
+Please check the github issue https://github.com/brainhack-ch/superres-mri/issues/7 dedicated to the management, tracking, and discussions about the developement of the SINAPP collection for the MIALSRTK library.
+
 ## Running the notebooks:
 
 * Go to the notebooks directory in the cloned repo:
