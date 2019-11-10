@@ -18,27 +18,53 @@ OG 2019 - Project 03: Package a portable and reproducible software for motion-ro
 ```
 git clone https://github.com/brainhack-ch/superres-mri.git <Your/installation/dir>
 ```
-* Install the packages and dependencies...
+* Install the `supermri-env` conda environment with all the packages and dependencies:
 ```
 conda env create -f environment.yml
 ```
+* Download the latest version of the mialsuperresolutiontoolkit Docker image:
+```
+docker pull sebastientourbier/mialsuperresolutiontoolkit:latest
+```
 
-## Running:
+## Running the SINAPP example:
 
-* Go to the notebooks directory in the cloned repo
+We provide two scripts in `sinapps/nlmdenoise/`. The script `build_sinapp-core_and_sinapp-nlmdenoise.sh`show you how we build the sinapp-nlmdenoise docker image. The script `run_sinapp-nlmdenoise.sh` shows you how to execute it. 
+
+Instructions to make it work:
+* Edit the path defined by `superes-mri_dir` in `build_sinapp-core_and_sinapp-nlmdenoise.sh` by your `<Your/installation/dir>`.
+* Edit the path defined by `bids_dir` in the  `run_sinapp-nlmdenoise.sh` script to the location of your BIDS dataset location (`<Your/BIDS/dir>`)
+* In a terminal go to your `<Your/installation/dir>`:
+```
+cd <Your/installation/dir>
+```
+* Build the SINAPP:
+```
+sh build_sinapp-core_and_sinapp-nlmdenoise.sh
+```
+* Run the SINAPP that performs NLMdenoising on all T2w scans of sub-01 in `<Your/BIDS/dir>`:
+```
+sh run_sinapp-nlmdenoise.sh
+```
+Results are generated in `<Your/BIDS/dir>/derivatives/superres-mri/sub-01/nipype/sinapp_nlmdenoise`.
+
+## Running the notebooks:
+
+* Go to the notebooks directory in the cloned repo:
 ```
 cd <Your/installation/dir>/notebooks
 ```
 
-* Activate the conda environment supermri-env
+* Activate the conda environment `supermri-env`:
 ```
 conda activate supermri-env
 ```
 
-* Runs the ipython notebook server:
+* Launch the ipython notebook server:
 ```
-python brainHack.ipynb
+jupyter notebook
 ```
+
 
 ## License
 
@@ -47,6 +73,11 @@ This project is licensed under the BSD 3-Clause License - see the [LICENSE](LICE
 ## Authors
 
 * **Sebastien Tourbier**
+* **Priscille**
+* **Hamza**
+* **Manik**
+* **Olivier**
+* **Guillaume**
 * **Seirios**
 * **Brenda**
 * **Snezana**
