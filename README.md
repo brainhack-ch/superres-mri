@@ -14,7 +14,7 @@ This project is built on standards, tools, and frameworks developed to address t
 
 It investigates a novel framework, the Self-contained Interfaceable No-nonsense Application (SINAPP) framework, designed to provide modularity and reusability of the pipeline stages within the BIDS App framework. 
 
-![](resources/images/sinapp-framework.jpg)
+![](resources/images/sinapp-framework.png)
 
 
 **Project started at previous Brainhack Open Geneva 19 as:** 
