@@ -1,6 +1,6 @@
 # A modular, portable, reusable and reproducible processing pipeline software for fetal brain MRI super-resolution
 
-The essence of this project is to develop a modular BIDS App for fetal brain MRI super-resolution that can interface with the open-source C++ [Medical Image Analysis Laboratory Super-Resolution ToolKit (MIALSRTK)](https://github.com/sebastientourbier/mialsuperresolutiontoolkit), a set of tools that provides a solution to the whole processing pipeline and that is packaged as a Docker image.
+The essence of this project is to develop a modular BIDS App for fetal brain MRI super-resolution that can interface with the open-source C++ [Medical Image Analysis Laboratory Super-Resolution ToolKit (MIALSRTK)](https://github.com/sebastientourbier/mialsuperresolutiontoolkit), a set of tools compiled and distributed as a Docker image, that provides a complete solution to the processing pipeline.
 
 This project is built on standards, tools, and frameworks developed to address the reproducibility and transparency challenges in the neuroimaging field :
 
@@ -51,11 +51,11 @@ docker pull sebastientourbier/mialsuperresolutiontoolkit:latest
 
 ## Run the SINAPP example
 
-This example of SINAPP that performs NLM denoising was developed during the BrainHack Global Geneva 2019 and provides a proof of feasibility of the envisioned framework. Details about the solutions adopted to run a docker inside an other container are available at https://github.com/brainhack-ch/superres-mri/issues/5. Its architecture is illustrated by the figure below:
+This example of SINAPP that performs NLM denoising was developed during the BrainHack Global Geneva 2019 and provides a proof of feasibility of the envisioned framework. Details about the solutions found to run a docker inside an other container are available at https://github.com/brainhack-ch/superres-mri/issues/5. Its architecture is illustrated by the figure below:
 
 ![](resources/images/sinapp-nlmdenoise.png)
 
-We provide two scripts in `sinapps/nlmdenoise/` that facilitates the built and testing of this example. The script `build_sinapp-core_and_sinapp-nlmdenoise.sh`shows you how we build the sinapp-nlmdenoise docker image. The script `run_sinapp-nlmdenoise.sh` shows you how to execute it. 
+We provide two scripts in `sinapps/example_scripts` that facilitates the built and testing of this example. The script `build_sinapp-core_and_sinapp-nlmdenoise.sh`shows you how we build the sinapp-nlmdenoise docker image. The script `run_sinapp-nlmdenoise.sh` shows you how to execute it. 
 
 **Instructions**
 
@@ -67,13 +67,13 @@ cd <Your/installation/dir>
 ```
 * Build the SINAPP:
 ```
-sh build_sinapp-core_and_sinapp-nlmdenoise.sh
+sh sinapps/example_scripts/build_sinapp-core_and_sinapp-nlmdenoise.sh
 ```
 * Run the SINAPP  on all T2w scans of sub-01 in `<Your/BIDS/dir>`:
 ```
-sh run_sinapp-nlmdenoise.sh
+sh sinapps/example_scripts/run_sinapp-nlmdenoise.sh
 ```
-Results are generated in `<Your/BIDS/dir>/derivatives/superres-mri/sub-01/nipype/sinapp_nlmdenoise`.
+The results are generated in `<Your/BIDS/dir>/derivatives/superres-mri/sub-01/nipype/sinapp_nlmdenoise`.
 
 ## Want to help with the development of the entire collection of SINAPPs?
 Please check the github issue https://github.com/brainhack-ch/superres-mri/issues/7 dedicated to the management, tracking, and discussions about the developement of the SINAPP collection for the MIALSRTK library.
