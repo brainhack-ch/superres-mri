@@ -1,6 +1,6 @@
 # A modular, portable, reusable and reproducible pipeline software for fetal brain MRI super-resolution
 
-The essence of this project is to develop a modular BIDS App which interfaces with the open-source [Medical Image Analysis Laboratory Super-Resolution ToolKit (MIALSRTK)](https://github.com/sebastientourbier/mialsuperresolutiontoolkit), a set of C++ image processing tools necessary to perform the whole processing pipeline for motion-robust fetal brain super-resolution MRI.
+The essence of this project is to develop a modular BIDS App that can interface with the open-source C++ [Medical Image Analysis Laboratory Super-Resolution ToolKit (MIALSRTK)](https://github.com/sebastientourbier/mialsuperresolutiontoolkit), distributed as a Docker image, a set of tools necessary to perform the whole processing pipeline for fetal brain MRI super-resolution.
 
 This project is built on standards, tools, and frameworks developed to address the reproducibility and transparency challenges in the neuroimaging field :
 
