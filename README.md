@@ -53,7 +53,7 @@ This example of SINAPP that performs NLM denoising was developed during the Brai
 
 ![](resources/images/sinapp-nlmdenoise.png)
 
-We provide two scripts in `sinapps/nlmdenoise/` that facilitates the built and testing of the SINAPP example that performs NLMdenoising. The script `build_sinapp-core_and_sinapp-nlmdenoise.sh`shows you how we build the sinapp-nlmdenoise docker image. The script `run_sinapp-nlmdenoise.sh` shows you how to execute it. 
+We provide two scripts in `sinapps/nlmdenoise/` that facilitates the built and testing of this example. The script `build_sinapp-core_and_sinapp-nlmdenoise.sh`shows you how we build the sinapp-nlmdenoise docker image. The script `run_sinapp-nlmdenoise.sh` shows you how to execute it. 
 
 **Instructions**
 
