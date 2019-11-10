@@ -101,7 +101,6 @@ jupyter notebook
 This project is licensed under the BSD 3-Clause License - see the [LICENSE](LICENSE) file for details
 
 ## Contributors
-* **Sebastien**
 * **Priscille**
 * **Hamza**
 * **Manik**
@@ -111,6 +110,10 @@ This project is licensed under the BSD 3-Clause License - see the [LICENSE](LICE
 * **Brenda**
 * **Snezana**
 * **Niloufar**
+
+## Instigators
+* **Sebastien**
+* **Michael**
 
 See also the list of [contributors](https://github.com/brainhack-ch/superres-mri/contributors) who participated in this project.
 
