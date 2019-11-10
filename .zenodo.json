@@ -1,0 +1,47 @@
+{
+    "license": "BSD-3-Clause",
+    "keywords": [
+      "fetal",
+      "neuroimaging",
+      "pipeline",
+      "super-resolution",
+      "registration",
+      "MRI",
+      "BIDS",
+      "SINAPP"
+    ],
+    "publication_date": "2019-11-10",
+    "creators": [
+      {
+        "name": "Tourbier, Sebastien",
+        "affiliation": "Department of Radiology, Lausanne University Hospital (CHUV), Switzerland",
+        "orcid": "0000-0002-4441-899X"
+      },
+      {
+        "name": "Bhattacharjee, Manik",
+      },
+      {
+        "name": "Colin, Olivier",
+        },      
+      {
+        "name": "Stern, Guillaume",
+      }
+      {
+        "name": "Penante, Brenda",
+      }
+      {
+        "name": "Nektarijevic, Snezana",
+      }
+      {
+        "name": "Alipour Therani, Niloufar",
+      }
+      {
+        "name": "Guerrier de Dumast, Priscille",
+      }
+      {
+        "name": "Kebiri, Hamza",
+      }
+    ],
+    "access_right": "open",
+    "upload_type": "software"
+}
