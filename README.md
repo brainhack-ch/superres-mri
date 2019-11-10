@@ -20,6 +20,8 @@ It investigates a novel framework, the Self-contained Interfaceable No-nonsense 
 
 Project 05:  SINAPP (Modular BIDS App) for Motion-robust Super-Resolution MRI
 
+**Team:** Manik, Olivier, Guillaume and Sébastien 
+
 * See the final ![presentation](resources/slides/BrainHackGlobal2019.pdf)
 
 #### Brainhack Open Geneva 2019 
@@ -27,6 +29,8 @@ Project 05:  SINAPP (Modular BIDS App) for Motion-robust Super-Resolution MRI
 Project 03: Package a portable and reproducible software for motion-robust MRI super-resolution
 
 * See the final ![presentation](resources/slides/BrainHack2019.pdf)
+
+**Team:** Seirios, Brenda, Snezana, Niloufar and Sébastien
 
 ## Contribution, bug and support
 
@@ -98,9 +102,8 @@ jupyter notebook
 
 This project is licensed under the BSD 3-Clause License - see the [LICENSE](LICENSE) file for details
 
-## Authors
-
-* **Sebastien Tourbier**
+## Contributors
+* **Sebastien**
 * **Priscille**
 * **Hamza**
 * **Manik**
