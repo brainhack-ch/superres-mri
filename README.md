@@ -112,8 +112,8 @@ This project is licensed under the BSD 3-Clause License - see the [LICENSE](LICE
 * **Niloufar**
 
 ## Instigators
-* **Sebastien**
-* **Michael**
+* **Sebastien Tourbier**
+* **Michael Dayan**
 
 See also the list of [contributors](https://github.com/brainhack-ch/superres-mri/contributors) who participated in this project.
 
