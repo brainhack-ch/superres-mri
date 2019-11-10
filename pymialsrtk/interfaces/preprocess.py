@@ -2,7 +2,7 @@
 #
 #  This software is distributed under the open-source license Modified BSD
 #
-# Modified by the brainhackers
+# Modified by the brainhackers at BrainHack Global Geneva 2019
 #
 
 """ PyMIALSRTK preprocessing functions
@@ -48,17 +48,12 @@ class BtkNLMDenoising(BaseInterface):
         #out_file = os.path.join(self.inputs.bids_dir, ''.join((name, self.inputs.out_postfix, ext)))    
         out_file = os.path.join(os.getcwd().replace(self.inputs.bids_dir,'/fetaldata'), ''.join((name, self.inputs.out_postfix, ext)))
         
-        print(" UID: {}".format(os.getuid()))
-        print(" GID: {}".format(os.getgid()))
-
-        print(os.stat("/var/run/docker.sock"))
-        print(os.stat("/usr/bin/docker"))
-
+        uid = os.getuid()
+        gid = os.getgid()
+        
         cmd = []
-        cmd.append("docker run --rm -u {}:{}".format(os.getuid(),os.getgid()))
-        cmd.append("-v /var/run/docker.sock:/var/run/docker.sock")
-        cmd.append("-v /usr/local/bin/docker:/usr/bin/docker")
-        cmd.append("{}:/fetaldata".format(self.inputs.bids_dir))
+        cmd.append("docker run --rm -u {}:{}".format(uid,gid))
+        cmd.append("--volumes-from sinapp_nlmdenoise")
         cmd.append("sebastientourbier/mialsuperresolutiontoolkit btkNLMDenoising")
         cmd.append("-i {} -o {} -b {}".format(self.inputs.in_file,out_file,self.inputs.weight))
 
@@ -67,9 +62,11 @@ class BtkNLMDenoising(BaseInterface):
 
         try:
             print('... cmd: {}'.format(cmd))
-            run(' '.join(cmd), env={}, cwd=os.path.abspath(self.inputs.bids_dir))
+            p = run(' '.join(cmd), env={}, cwd=os.path.abspath(self.inputs.bids_dir))
+            print(p)
         except:
             print('Failed')
+
         return runtime
 
     def _list_outputs(self):
