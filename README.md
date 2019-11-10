@@ -53,7 +53,7 @@ docker pull sebastientourbier/mialsuperresolutiontoolkit:latest
 
 This example of SINAPP that performs NLM denoising was developed during the BrainHack Global Geneva 2019 and provides a proof of feasibility of the envisioned framework. Its architecture is illustrated by the figure below:
 
-![](resources/images/sinapp-nlmdenoise2.png)
+![](resources/images/sinapp-nlmdenoise3.png)
 
 We provide two scripts in `sinapps/nlmdenoise/` that facilitates the built and testing of this example. The script `build_sinapp-core_and_sinapp-nlmdenoise.sh`shows you how we build the sinapp-nlmdenoise docker image. The script `run_sinapp-nlmdenoise.sh` shows you how to execute it. 
 
