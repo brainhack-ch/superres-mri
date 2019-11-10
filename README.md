@@ -55,7 +55,7 @@ This example of SINAPP that performs NLM denoising was developed during the Brai
 
 ![](resources/images/sinapp-nlmdenoise.png)
 
-We provide two scripts in `sinapps/nlmdenoise/` that facilitates the built and testing of this example. The script `build_sinapp-core_and_sinapp-nlmdenoise.sh`shows you how we build the sinapp-nlmdenoise docker image. The script `run_sinapp-nlmdenoise.sh` shows you how to execute it. 
+We provide two scripts in `sinapps/example_scripts` that facilitates the built and testing of this example. The script `build_sinapp-core_and_sinapp-nlmdenoise.sh`shows you how we build the sinapp-nlmdenoise docker image. The script `run_sinapp-nlmdenoise.sh` shows you how to execute it. 
 
 **Instructions**
 
@@ -67,13 +67,13 @@ cd <Your/installation/dir>
 ```
 * Build the SINAPP:
 ```
-sh build_sinapp-core_and_sinapp-nlmdenoise.sh
+sh sinapps/example_scripts/build_sinapp-core_and_sinapp-nlmdenoise.sh
 ```
 * Run the SINAPP  on all T2w scans of sub-01 in `<Your/BIDS/dir>`:
 ```
-sh run_sinapp-nlmdenoise.sh
+sh sinapps/example_scripts/run_sinapp-nlmdenoise.sh
 ```
-Results are generated in `<Your/BIDS/dir>/derivatives/superres-mri/sub-01/nipype/sinapp_nlmdenoise`.
+The results are generated in `<Your/BIDS/dir>/derivatives/superres-mri/sub-01/nipype/sinapp_nlmdenoise`.
 
 ## Want to help with the development of the entire collection of SINAPPs?
 Please check the github issue https://github.com/brainhack-ch/superres-mri/issues/7 dedicated to the management, tracking, and discussions about the developement of the SINAPP collection for the MIALSRTK library.
