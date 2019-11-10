@@ -51,7 +51,7 @@ docker pull sebastientourbier/mialsuperresolutiontoolkit:latest
 
 ## Run the SINAPP example
 
-This example of SINAPP that performs NLM denoising was developed during the BrainHack Global Geneva 2019 and provides a proof of feasibility of the envisioned framework. Its architecture is illustrated by the figure below:
+This example of SINAPP that performs NLM denoising was developed during the BrainHack Global Geneva 2019 and provides a proof of feasibility of the envisioned framework. Details about the solutions adopted to run a docker inside an other container are available at https://github.com/brainhack-ch/superres-mri/issues/5. Its architecture is illustrated by the figure below:
 
 ![](resources/images/sinapp-nlmdenoise3.png)
 
