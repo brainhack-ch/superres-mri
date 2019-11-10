@@ -4,9 +4,9 @@ The essence of this project is to develop a modular BIDS App for fetal brain MRI
 
 This project is built on standards, tools, and frameworks developed to address the reproducibility and transparency challenges in the neuroimaging field :
 
-- the Brain Imaging Data Structure (BIDS), a standard to organize and describe neuroimaging data,
-- the Nipype dataflow library, which provides a common python API to interface with different tools and a workflow engine which control tool execution and record provenance. 
-- and the BIDS App framework, which promotes reproducibility and portability. 
+- the [Brain Imaging Data Structure (BIDS)](https://bids.neuroimaging.io), a standard to organize and describe neuroimaging data,
+- the [Nipype dataflow library](https://nipype.readthedocs.io), which provides a common python API to interface with different tools and a workflow engine which control tool execution and record provenance. 
+- and the [BIDS App framework](https://bids-apps.neuroimaging.io), which promotes reproducibility and portability. 
 
 It investigates a novel framework, the Self-contained Interfaceable No-nonsense Application (SINAPP) framework, designed to provide modularity and reusability of the pipeline stages within the BIDS App framework. 
 
