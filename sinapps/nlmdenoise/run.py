@@ -21,7 +21,11 @@ from nipype.interfaces.base import traits, isdefined, CommandLine, CommandLineIn
 
 def create_workflow(bids_dir, output_dir, subject):
 
-    wf = Workflow(name="bids_demo",base_dir=output_dir)
+    wf_base_dir = os.path.join("{}".format(output_dir),"superres-mri","sub-{}".format(subject),"nipype")
+
+    print("Ouput directory: {}".format(wf_base_dir))
+
+    wf = Workflow(name="sinapp_nlmdenoise",base_dir=wf_base_dir)
 
     # Initialization
     if os.path.isfile(os.path.join(output_dir,"pypeline.log")):
@@ -29,10 +33,17 @@ def create_workflow(bids_dir, output_dir, subject):
     
     config.update_config({'logging': {'log_directory': os.path.join(output_dir),
                               'log_to_file': True},
-                          'execution': {'remove_unnecessary_outputs': False,
-                          'stop_on_first_crash': True,'stop_on_first_rerun': False,
-                          'crashfile_format': "txt"}
-                          })
+                          'execution': {
+                            'remove_unnecessary_outputs': False,
+                            'stop_on_first_crash': True,
+                            'stop_on_first_rerun': False,
+                            'crashfile_format': "txt",
+                            'write_provenance' : False,
+                            },
+                          'monitoring': {
+                            'enabled': True
+                            }
+                        })
     logging.update_logging(config)
     iflogger = logging.getLogger('nipype.interface')
 
