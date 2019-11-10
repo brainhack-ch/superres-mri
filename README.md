@@ -13,7 +13,11 @@ The essence of this project is to develop the next generation of the open-source
 
 OG 2019 - Project 03: Package a portable and reproducible software for motion-robust MRI super-resolution (See achievements in ![presentation](resources/slides/BrainHack2019.pdf))
 
-## Install
+## Contribution, bug and support
+
+This project is conducted with transparency in mind. It uses GitHub Issues (https://github.com/brainhack-ch/superres-mri/issues) and GitHub pull-request (https://github.com/brainhack-ch/superres-mri/pulls) to manage and discuss bugs and new features. 
+
+## Installation
 * Clone this repository:
 ```
 git clone https://github.com/brainhack-ch/superres-mri.git <Your/installation/dir>
@@ -27,9 +31,10 @@ conda env create -f environment.yml
 docker pull sebastientourbier/mialsuperresolutiontoolkit:latest
 ```
 
+
 ## Running the SINAPP example:
 
-We provide two scripts in `sinapps/nlmdenoise/`. The script `build_sinapp-core_and_sinapp-nlmdenoise.sh`show you how we build the sinapp-nlmdenoise docker image. The script `run_sinapp-nlmdenoise.sh` shows you how to execute it. 
+We provide two scripts in `sinapps/nlmdenoise/`. The script `build_sinapp-core_and_sinapp-nlmdenoise.sh`shows you how we build the sinapp-nlmdenoise docker image. The script `run_sinapp-nlmdenoise.sh` shows you how to execute it. 
 
 Instructions to make it work:
 * Edit the path defined by `superes-mri_dir` in `build_sinapp-core_and_sinapp-nlmdenoise.sh` by your `<Your/installation/dir>`.
@@ -48,7 +53,7 @@ sh run_sinapp-nlmdenoise.sh
 ```
 Results are generated in `<Your/BIDS/dir>/derivatives/superres-mri/sub-01/nipype/sinapp_nlmdenoise`.
 
-## Want to contribute with the development of the SINAPPs?
+## Want to help with the development of the entire collection of SINAPPs?
 Please check the github issue https://github.com/brainhack-ch/superres-mri/issues/7 dedicated to the management, tracking, and discussions about the developement of the SINAPP collection for the MIALSRTK library.
 
 ## Running the notebooks:
