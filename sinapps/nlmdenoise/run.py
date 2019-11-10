@@ -96,7 +96,16 @@ def get_parser():
     return p
 
 if __name__ == '__main__':
+
+    import pwd
+
     parser = get_parser()
     args = parser.parse_args()
 
-    main(bids_dir=args.bids_dir, output_dir=args.output_dir, subject=args.participant_label)
+    if len(args.participant_label) > 1:
+        for sub in args.participant_label:
+            main(bids_dir=args.bids_dir, output_dir=args.output_dir, subject=sub)
+    elif len(args.participant_label) == 1:
+        main(bids_dir=args.bids_dir, output_dir=args.output_dir, subject=args.participant_label[0])
+    else:
+        print('ERROR: Processing of all dataset not implemented yet\n At least one participant label should be provided')
