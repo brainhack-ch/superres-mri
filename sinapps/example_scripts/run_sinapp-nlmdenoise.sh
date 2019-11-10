@@ -1,11 +1,15 @@
 #!/usr/bin/sh
 
+# Adapt path to your own BIDS dataset location
 bids_dir=/Users/sebastientourbier/Softwares/mialsuperresolutiontoolkit/data
 
-rm -R "${bids_dir}/derivatives/bids_demo"
+# Remove precomputed output 
+rm -R "${bids_dir}/derivatives/superres-mri/sub-01/nipype/sinapp_nlmdenoise"
 
-docker run --rm \
+# Execute the SINApp for denoising on sub-01
+docker run --rm --name sinapp_nlmdenoise\
 	-u $(id -u):$(id -g) \
+	--group-add 0 \
 	-v /var/run/docker.sock:/var/run/docker.sock \
 	-v /usr/local/bin/docker:/usr/bin/docker \
 	-v ${bids_dir}:/fetaldata \
