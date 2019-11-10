@@ -30,9 +30,9 @@ Project 03: Package a portable and reproducible software for motion-robust MRI s
 
 **Team:** Seirios, Brenda, Snezana, Niloufar and Sébastien
 
-## Contribution, bug and support
+## Bug and support
 
-This project is conducted with transparency in mind. It uses GitHub Issues (https://github.com/brainhack-ch/superres-mri/issues) and GitHub pull-request (https://github.com/brainhack-ch/superres-mri/pulls) to manage and discuss bugs and new features. 
+This project is conducted with transparency in mind. Please use GitHub Issues (https://github.com/brainhack-ch/superres-mri/issues) to report and and discuss bugs and new features. 
 
 ## Installation
 * Clone this repository:
