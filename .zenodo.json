@@ -11,35 +11,40 @@
       "SINAPP"
     ],
     "publication_date": "2019-11-10",
-    "creators": [
+    "creators": [ 
       {
         "name": "Tourbier, Sebastien",
         "affiliation": "Department of Radiology, Lausanne University Hospital (CHUV), Switzerland",
         "orcid": "0000-0002-4441-899X"
       },
       {
+        "name": "Dayan, Michael",
+        "affiliation": "Foundation Campus Biotech",
+        "orcid": "0000-0002-2666-0969"
+      }, 
+      {
         "name": "Bhattacharjee, Manik",
+      },
+       {
+        "name": "Guerrier de Dumast, Priscille",
+      },
+      {
+        "name": "Kebiri, Hamza",
       },
       {
         "name": "Colin, Olivier",
-        },      
+      },      
       {
         "name": "Stern, Guillaume",
-      }
+      },
       {
         "name": "Penante, Brenda",
-      }
+      },
       {
         "name": "Nektarijevic, Snezana",
-      }
+      },
       {
         "name": "Alipour Therani, Niloufar",
-      }
-      {
-        "name": "Guerrier de Dumast, Priscille",
-      }
-      {
-        "name": "Kebiri, Hamza",
       }
     ],
     "access_right": "open",
