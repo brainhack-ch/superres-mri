@@ -38,6 +38,7 @@ See the final ![presentation](resources/slides/BrainHack2019.pdf)
 * Implement the pipeline for the NLMdenoising SINAPP which BIDS App parser
 * Creation of the SINAPP Dockerfile for pipeline containerization
 * Adopt Docker-out-of-Docker solution to run within a first container (the SINAPP Docker container) the NLMdenoising program contained in a second container (the MIALSRTK docker image)
+* Start integration and adaption of notebooks and interfaces implemented by Priscille and Hamza without the Docker framework (interface that calls directly the MIALSRTK program and not the program in the containerized MIALSRTK library)
 
 See the final ![presentation](resources/slides/BrainHackGlobal2019.pdf)
 
