@@ -14,21 +14,33 @@ It investigates a novel framework, the Self-contained Interfaceable No-nonsense 
 
 ### Achievements during the previous Brainhack
 
-#### Brainhack Global 2019 
+#### Brainhack Open Geneva 2019 - March Friday 22nd and Saturday 23rd 2019
 
-Project 05:  SINAPP (Modular BIDS App) for Motion-robust Super-Resolution MRI
+*Project 03*: Package a portable and reproducible software for motion-robust MRI super-resolution
 
-* See the final ![presentation](resources/slides/BrainHackGlobal2019.pdf)
+*Team:* Seirios, Brenda, Snezana, Niloufar and Sébastien
 
-**Team:** Manik, Olivier, Guillaume and Sébastien 
+*Work done:*
+* Creation of notebook/brainhack.ipnb
+* Implement a Nipype interface that calls the NLMdenoising program from the containerized MIALSRTK library
+* Implement simple workflow that uses the BIDSDataGrabber interface to load data, which is then connected to the NLMdenoising interface
 
-#### Brainhack Open Geneva 2019 
+See the final ![presentation](resources/slides/BrainHack2019.pdf)
 
-Project 03: Package a portable and reproducible software for motion-robust MRI super-resolution
+#### Brainhack Global 2019 - November Thursday 7th, Friday 8th and Saturday 9th 2019
 
-* See the final ![presentation](resources/slides/BrainHack2019.pdf)
+*Project 05*: SINAPP (Modular BIDS App) for Motion-robust Super-Resolution MRI
 
-**Team:** Seirios, Brenda, Snezana, Niloufar and Sébastien
+*Team:* Priscille, Hamza, Manik, Olivier, Guillaume and Sébastien 
+
+*Work done:*
+* Refactored code for building the project as a python package `pymialsrtk`
+* Implement the pipeline for the NLMdenoising SINAPP which BIDS App parser
+* Creation of the SINAPP Dockerfile for pipeline containerization
+* Adopt Docker-out-of-Docker solution to run within a first container (the SINAPP Docker container) the NLMdenoising program contained in a second container (the MIALSRTK docker image)
+
+See the final ![presentation](resources/slides/BrainHackGlobal2019.pdf)
+
 
 ## Bug and support
 
